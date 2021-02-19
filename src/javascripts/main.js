@@ -1,5 +1,7 @@
 import '../styles/main.scss';
 
+let bears = [];
+
 const printToDom = (divId, textToPrint) => {
   const selectedDiv = document.querySelector(divId);
   selectedDiv.innerHTML = textToPrint;
