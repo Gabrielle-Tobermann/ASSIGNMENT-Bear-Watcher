@@ -1,6 +1,11 @@
 import '../styles/main.scss';
 
-let bears = [];
+const bears = [
+  {
+    name: 'Bob',
+    url: 'blah',
+  }
+];
 
 const printToDom = (divId, textToPrint) => {
   const selectedDiv = document.querySelector(divId);
@@ -23,8 +28,24 @@ const createForm = () => {
   printToDom('#bear-form', formString);
 };
 
+const createCards = (arr) => {
+  let cardString = '';
+  for (let i = 0; i < arr.length; i += 1) {
+    cardString += `<div class="card" style="width: 18rem;">
+    <img src=${arr[i].name} class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">${arr[i].name}</h5>
+      <p class="card-text">Bear stuff</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>`;
+  }
+  printToDom('#bearCard', cardString);
+};
+
 const init = () => {
   createForm();
+  createCards(bears);
 };
 
 init();
