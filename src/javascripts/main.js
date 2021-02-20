@@ -20,7 +20,7 @@ const createForm = () => {
   </div>
   <div class="form-group">
     <label for="img-url">Image</label>
-    <input type="url" class="form-control" id="exampleInputPassword1">
+    <input type="url" class="form-control" id="img-url">
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>`;
@@ -32,7 +32,7 @@ const createCards = (arr) => {
   let cardString = '';
   for (let i = 0; i < arr.length; i += 1) {
     cardString += `<div class="card" style="width: 18rem;">
-    <img src=${arr[i].name} class="card-img-top" alt="...">
+    <img src=${arr[i].url} class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">${arr[i].name}</h5>
       <p class="card-text">Bear stuff</p>
@@ -43,9 +43,23 @@ const createCards = (arr) => {
   printToDom('#bearCard', cardString);
 };
 
+const getFormInfo = (e) => {
+  e.preventDefault();
+  const name = document.querySelector('#bear-name').value;
+  const url = document.querySelector('#img-url').value;
+  const obj = {
+    name,
+    url,
+  };
+  bears.push(obj);
+  createCards(bears);
+  document.querySelector('form').reset();
+};
+
 const init = () => {
   createForm();
   createCards(bears);
+  document.querySelector('form').addEventListener('submit', getFormInfo);
 };
 
 init();
