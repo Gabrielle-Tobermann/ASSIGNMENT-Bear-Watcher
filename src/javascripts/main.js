@@ -13,16 +13,16 @@ const printToDom = (divId, textToPrint) => {
 };
 
 const createForm = () => {
-  const formString = `<form>
-  <div class="form-group">
-    <label for="bearName">Enter bear name</label>
-    <input type="text" class="form-control" id="bear-name" aria-describedby="bearName">
+  const formString = `<form class="border-top border-bottom border-secondary p-3 w-50 mb-3">
+  <div class="form-group w-100">
+    <label for="bearName">Enter bear name:</label>
+    <input type="text" class="form-control" id="bear-name" aria-describedby="bearName" required>
   </div>
-  <div class="form-group">
-    <label for="img-url">Image</label>
-    <input type="url" class="form-control" id="img-url">
+  <div class="form-group w-100">
+    <label for="img-url">Enter image:</label>
+    <input type="url" class="form-control" id="img-url" required>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-secondary">Submit</button>
 </form>`;
 
   printToDom('#bear-form', formString);
