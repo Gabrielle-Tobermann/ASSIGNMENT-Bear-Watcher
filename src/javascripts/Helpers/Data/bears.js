@@ -18,9 +18,10 @@ const getFormInfo = (e) => {
 };
 
 const attempt = () => {
-  for (let bear of bears) {
-    bears[bear].attempted += 1;
-  }
+  bears.forEach((item) => {
+    const element = item;
+    element.attempted += 1;
+  });
   createCards(bears);
 };
 
