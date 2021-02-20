@@ -56,10 +56,18 @@ const getFormInfo = (e) => {
   document.querySelector('form').reset();
 };
 
+const river = () => {
+  document.querySelector('form').style.display = 'none';
+  const stringToPrint = '<div id="all-bears">Here are all the bears currently being tracked</div>';
+  printToDom('#river', stringToPrint);
+  createCards(bears);
+};
+
 const init = () => {
   createForm();
   createCards(bears);
   document.querySelector('form').addEventListener('submit', getFormInfo);
+  document.querySelector('#river-btn').addEventListener('click', river);
 };
 
 init();
