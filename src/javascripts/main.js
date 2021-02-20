@@ -1,16 +1,8 @@
 import '../styles/main.scss';
-import printToDom from './Helpers/printToDom';
 import { bears, getFormInfo } from './Helpers/Data/bears';
 import createForm from './Components/createForm';
 import createCards from './Components/createCards';
-
-const river = () => {
-  document.querySelector('.jumbotron').style.display = 'none';
-  document.querySelector('form').style.display = 'none';
-  const stringToPrint = '<div id="all-bears" class="text-secondary">Here are all the bears currently being tracked</div>';
-  printToDom('#river', stringToPrint);
-  createCards(bears);
-};
+import river from './Components/river';
 
 const init = () => {
   createForm();
