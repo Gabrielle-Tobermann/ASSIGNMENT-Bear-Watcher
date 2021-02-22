@@ -7,8 +7,10 @@ const createCards = (arr) => {
     <img src=${arr[i].url} class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">${arr[i].name}</h5>
-      <p class="card-text">Bear stuff</p>
-      <a href="#" class="btn btn-secondary">Go somewhere</a>
+      <p class="card-text">${arr[i].name} attempted to catch ${arr[i].attempted} fish</p>
+      <p class="card-text">${arr[i].name} successfully caught ${arr[i].succeeded} fish</p>
+      <button class="btn btn-secondary" type="button" id="attempted">attempted</button>
+      <button class="btn btn-secondary" type="button" id="succeeded">succeeded</button>
     </div>
   </div>`;
   }
