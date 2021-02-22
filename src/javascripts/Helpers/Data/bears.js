@@ -10,6 +10,8 @@ const getFormInfo = (e) => {
   const succeeded = 0;
   const timeAttempt = Date();
   const timeSucceed = Date();
+  const bearIds = bears.map((bear) => (bear.id)).sort((a, b) => a - b);
+  const id = bearIds.length ? bearIds[(bearIds.length - 1)] + 1 : 1;
   const obj = {
     name,
     url,
@@ -17,6 +19,7 @@ const getFormInfo = (e) => {
     succeeded,
     timeAttempt,
     timeSucceed,
+    id,
   };
   bears.push(obj);
   createCards(bears);
@@ -25,11 +28,10 @@ const getFormInfo = (e) => {
 
 const attempt = (e) => {
   if (e.target.id === 'attempted') {
-    bears.forEach((item) => {
-      const element = item;
-      element.attempted += 1;
-      element.timeAttempt = new Date();
-    });
+    const bearIndex = bears.findIndex((bear) => bear.id === e.target.id);
+    console.warn(bearIndex);
+    bearIndex.attempted += 1;
+    bearIndex.timeAttempt = new Date();
   }
   createCards(bears);
 };
