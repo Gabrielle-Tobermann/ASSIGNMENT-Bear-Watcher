@@ -27,8 +27,9 @@ const getFormInfo = (e) => {
 };
 
 const attempt = (e) => {
+  const targetId = e.target.id;
   if (e.target.id === 'attempted') {
-    const bearIndex = bears.findIndex((bear) => bear.id === e.target.id);
+    const bearIndex = bears.find((bear) => bear.id === targetId);
     console.warn(bearIndex);
     bearIndex.attempted += 1;
     bearIndex.timeAttempt = new Date();
