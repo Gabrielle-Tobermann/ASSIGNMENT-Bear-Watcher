@@ -8,11 +8,15 @@ const getFormInfo = (e) => {
   const url = document.querySelector('#img-url').value;
   const attempted = 0;
   const succeeded = 0;
+  const timeAttempt = Date();
+  const timeSucceed = Date();
   const obj = {
     name,
     url,
     attempted,
     succeeded,
+    timeAttempt,
+    timeSucceed,
   };
   bears.push(obj);
   createCards(bears);
@@ -24,6 +28,7 @@ const attempt = (e) => {
     bears.forEach((item) => {
       const element = item;
       element.attempted += 1;
+      element.timeAttempt = new Date();
     });
   }
   createCards(bears);
@@ -34,6 +39,7 @@ const succeed = (e) => {
     bears.forEach((item) => {
       const element = item;
       element.succeeded += 1;
+      element.timeSucceed = new Date();
     });
   }
   createCards(bears);
