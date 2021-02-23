@@ -23,7 +23,6 @@ const getFormInfo = (e) => {
   };
   bears.push(obj);
   createCards(bears);
-  console.warn(bears.id);
   document.querySelector('form').reset();
 };
 
@@ -50,5 +49,5 @@ const succeed = (e) => {
 };
 
 export {
-  bears, getFormInfo, attempt, succeed
+  bears, getFormInfo, attempt, succeed,
 };
