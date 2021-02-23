@@ -12,8 +12,8 @@ const createCards = (arr) => {
       <p class="card-text font-weight-bold text-success">${arr[i].name} successfully caught ${arr[i].succeeded} fish</p>
       <p class="card-text text-secondary">at ${arr[i].timeSucceed}</p>
       <p class="card=text">${arr[i].id}</p>
-      <button class="btn btn-secondary" type="button" id="attempted">attempted</button>
-      <button class="btn btn-secondary" type="button" id="succeeded">succeeded</button>
+      <button class="btn btn-secondary" type="button" id="attempted--${arr[i].id}">attempted</button>
+      <button class="btn btn-secondary" type="button" id="succeeded--${arr[i].id}">succeeded</button>
     </div>
   </div>`;
   }

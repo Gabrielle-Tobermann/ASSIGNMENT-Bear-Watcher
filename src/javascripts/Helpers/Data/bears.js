@@ -23,27 +23,28 @@ const getFormInfo = (e) => {
   };
   bears.push(obj);
   createCards(bears);
+  console.warn(bears.id);
   document.querySelector('form').reset();
 };
 
 const attempt = (e) => {
   const targetId = e.target.id;
-  if (e.target.id === 'attempted') {
-    const bearIndex = bears.find((bear) => bear.id === targetId);
-    console.warn(bearIndex);
-    bearIndex.attempted += 1;
-    bearIndex.timeAttempt = new Date();
+  if (targetId.includes('attempted')) {
+    const bearId = Number(targetId.split('--')[1]);
+    const bearIndex = bears.findIndex((bear) => bear.id === bearId);
+    bears[bearIndex].attempted += 1;
+    bears[bearIndex].timeAttempt = new Date();
   }
   createCards(bears);
 };
 
 const succeed = (e) => {
-  if (e.target.id === 'succeeded') {
-    bears.forEach((item) => {
-      const element = item;
-      element.succeeded += 1;
-      element.timeSucceed = new Date();
-    });
+  const targetId = e.target.id;
+  if (targetId.includes('succeeded')) {
+    const bearId = Number(targetId.split('--')[1]);
+    const bearIndex = bears.findIndex((bear) => bear.id === bearId);
+    bears[bearIndex].succeeded += 1;
+    bears[bearIndex].timeSucceed = new Date();
   }
   createCards(bears);
 };
