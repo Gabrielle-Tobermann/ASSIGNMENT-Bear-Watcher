@@ -1,6 +1,6 @@
 import '../styles/main.scss';
 import {
-  bears, getFormInfo, attempt, succeed
+  bears, getFormInfo, succeed, attempt
 } from './Helpers/Data/bears';
 import createForm from './Components/createForm';
 import createCards from './Components/createCards';
