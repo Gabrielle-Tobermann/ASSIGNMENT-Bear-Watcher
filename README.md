@@ -16,5 +16,13 @@ The ideal user is a park ranger, bear or nature enthusiast looking to keep a rec
 Wireframe: https://www.figma.com/file/kk2dSJBm5xfh4jXWP3Oxcq/Bear-Watcher?node-id=0%3A1
 Project board: https://github.com/Gabrielle-Tobermann/ASSIGNMENT-Bear-Watcher/projects/1
 
+## Loom
+https://www.loom.com/share/6046f9f2e2054932aafa6df4219d0bc7
+
+## Screeshots
+![bearWatcher1](https://user-images.githubusercontent.com/76187279/108918443-01a69b80-75f7-11eb-8800-7cb1d4ba2722.png)
+![bearWatcher2](https://user-images.githubusercontent.com/76187279/108918450-04a18c00-75f7-11eb-8ab4-b71838bd6f9e.png)
+![bearWatcher3](https://user-images.githubusercontent.com/76187279/108918458-079c7c80-75f7-11eb-98a2-f221cdca7637.png)
+
 ## Contributors:
 Gabrielle Tobermann https://github.com/Gabrielle-Tobermann
