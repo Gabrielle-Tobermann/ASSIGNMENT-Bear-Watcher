@@ -1,6 +1,8 @@
 import printToDom from '../Helpers/printToDom';
 import createCards from './createCards';
 import { bears } from '../Helpers/Data/bears';
+import initalScreen from './initialScreen';
+import createForm from './createForm';
 
 const trackedBears = [
   {
@@ -30,16 +32,20 @@ const trackedBears = [
     timeSucceed: new Date(),
     id: 1002,
   }
-
 ];
 
 const river = () => {
   document.querySelector('.jumbotron').style.display = 'none';
   document.querySelector('form').style.display = 'none';
+  document.querySelector('#river-btn').style.display = 'none';
   const stringToPrint = '<div id="all-bears" class="text-secondary">Here are all the bears currently being tracked</div>';
   printToDom('#river', stringToPrint);
   bears.push(...trackedBears);
   createCards(bears);
+  const backButton = '<button class="btn btn-secondary mb-5" type="button">Go back to home page </button>';
+  printToDom('#backButton', backButton);
+  document.querySelector('#backButton').addEventListener('click', initalScreen);
+  document.querySelector('#backButton').addEventListener('click', createForm);
 };
 
 export default river;

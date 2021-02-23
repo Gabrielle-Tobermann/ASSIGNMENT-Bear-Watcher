@@ -10,7 +10,8 @@ const initalScreen = () => {
 <div id="bear-form" class="d-flex justify-content-center"></div>
 <div id="river" class="m-5"></div>
 <div id="bearCard" class="d-flex flex-wrap justify-content-center"></div>
-<button type="button" class="btn btn-secondary m-5" id="river-btn">Take a look at the river! </button>`;
+<button type="button" class="btn btn-secondary m-5" id="river-btn">Take a look at the river! </button>
+<div id="backButton"></div>`;
 
   printToDom('body', domString);
 };
